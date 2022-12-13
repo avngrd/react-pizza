@@ -1,3 +1,3 @@
 # React Pizza
 
-##About project
+About project
