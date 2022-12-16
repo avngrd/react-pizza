@@ -16,7 +16,10 @@ function App() {
     fetch('https://639c1f3842e3ad692727b1e9.mockapi.io/items')
       .then((res) => res.json())
       .then((arr) => {
-        setItems(arr);
+        setTimeout(() => {
+          setItems(arr);
+          setIsLoading(false);
+        }, 1000);
       });
   }, []);
 
@@ -32,7 +35,7 @@ function App() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {isLoading
-              ? [new Array(6)].map((_, index) => <Skeleton key={index} />)
+              ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
               : items.map((obj) => <PizzaBlock key={obj.id} {...obj} />)}
           </div>
         </div>
