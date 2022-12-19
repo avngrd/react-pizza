@@ -5,6 +5,10 @@
   text-align: center;
   margin-bottom: 65px;
 
+  @media(max-width: 730px){
+      margin-left: 65px;
+  }
+
   &__image {
     width: 260px;
   }
