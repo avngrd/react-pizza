@@ -19,7 +19,6 @@ const Home = () => {
 
   const { categoryId, sort, searchValue } = useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
-  const sortType = sort.sortProperty;
 
   const [currentPage, setCurrentPage] = React.useState(1);
 
