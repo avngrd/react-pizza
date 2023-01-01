@@ -4,7 +4,11 @@ import axios from 'axios';
 
 const FullPizza: React.FC = () => {
   const { id } = useParams();
-  const [pizza, setPizza] = React.useState();
+  const [pizza, setPizza] = React.useState<{
+    imageUrl:string;
+    title:string;
+    price:number;
+  }>();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -21,7 +25,7 @@ const FullPizza: React.FC = () => {
   });
 
   if (!pizza) {
-    return <>'Загрузка..'</>;
+    return <>  'Загрузка..'</>;
   }
 
   return (
