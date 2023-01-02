@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const Search = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<string>('');
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickClear = () => {
