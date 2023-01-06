@@ -3,13 +3,11 @@ import { useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
-import { fetchPizzas, SearchPizzaParams, selectPizzaData } from '../redux/slices/pizzaSlice';
-import {
-  selectFilter,
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from '../redux/slices/filterSlice';
+import { SearchPizzaParams } from '../redux/pizza/types';
+import { selectPizzaData } from '../redux/pizza/selectors';
+import { fetchPizzas } from '../redux/pizza/asyncActions';
+import { selectFilter } from '../redux/filter/selectors';
+import { setCategoryId, setCurrentPage, setFilters } from '../redux/filter/slice';
 import Categories from '../components/Categories';
 import Sort, { list } from '../components/Sort';
 import { PizzaBlock } from '../components/PizzaBlock';
